@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "HK Grotesk";
+  src: url(../assets/hk-grotesk.woff), url(../assets/hk-grotesk.woff2);
+}
+
+body {
+  font-family: "HK Grotesk", Arial;
+  font-size: 36px;
+  line-height: 1.25;
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  position: fixed;
+  top: 36px;
+  left: 36px;
+  z-index: 1;
+}
+
+
+section {
+  background-color: #c8dee0;
+  /* fills the browser */
+  min-height: 100vh;
+  padding: 80px;
+
+  /* aligns the image in the centre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.content {
+  /* make the square relevant to this content box */
+  position: relative; 
+}
+
+
+div.square {
+  /* use position absolute because we want it to be absolutely positioned
+  in relation to the image */
+  position: absolute;
+  top: 50px;
+  left: -50px;
+
+  width: 100px;
+  height: 100px;
+  background-color: #d54156;
+}
+
+div.circle {
+  position: absolute; 
+  bottom: 50px;
+  right: -50px; 
+  
+  border-radius: 50%; 
+  
+  width: 100px;
+  height: 100px;
+  background-color: #5982a0; 
+}
+
+/* puts the square underneath */
+div.content img {
+  position: relative;
+}
+
+section.s2 {
+  background-color: #c5c5c5; 
+}
+
+section.s2 div.square {
+  background-color: #d6ac35;  
+}
+
+section.s2 div.circle {
+  background-color: #be3c52; 
+}
+
+/* third section */
+
+section.s3 {
+  background-color: #292121; 
+}
+
+section.s3 div.square {
+  background-color: #5f3736;  
+}
+
+section.s3 div.circle {
+  background-color: #6e5f67; 
+}
+
+/* fourth section */
+
+section.s4 {
+  background-color: #f3f1f2;  
+}
+
+section.s4 div.square {
+  background-color: #d54156;  
+}
+
+section.s4 div.circle {
+  background-color: #5982a0; 
+}
+
+
+
+
+
+
+
