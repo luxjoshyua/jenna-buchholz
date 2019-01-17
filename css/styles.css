@@ -107,6 +107,17 @@ section.s4 div.circle {
 }
 
 
+div.progress {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 0; 
+  height: 10px; 
+  background-color: #333; 
+  /* all elements by default have a z-index of 0  */
+  z-index: 1; 
+}
+
 
 
 
