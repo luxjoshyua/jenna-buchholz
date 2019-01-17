@@ -15,6 +15,9 @@ document.addEventListener("scroll", function () {
 
   // changes the pixels tag to be the value of the pixels
   pixelsTag.innerHTML = pixels + ' pixels scrolled'
+  
+
+  // pixelsTag.innerHTML = `${pixels} pixels scrolled`
 
 
 
