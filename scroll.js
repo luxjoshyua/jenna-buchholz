@@ -1,20 +1,16 @@
-
 // can call the const whatever you want
 // finds the div with a class of pixels
 const pixelsTag = document.querySelector("div.pixels")
-
-
 // find the body
 const bodyTag = document.querySelector("body")
-
-
 const progressTag = document.querySelector("div.progress")
-
 
 const sections = document.querySelectorAll("section")
 // using querySelector just selects the one
 const clientTag = document.querySelector("div.client")
 const pageTag = document.querySelector("div.page")
+// for the header to change to white 
+const headerTag = document.querySelector("header")
 
 
 // when we scroll the page, update the pixels tag to be how far we've scrolled
@@ -28,7 +24,6 @@ document.addEventListener("scroll", function () {
 
   // changes the pixels tag to be the value of the pixels
   pixelsTag.innerHTML = pixels + ' pixels scrolled'
-  
 
   // pixelsTag.innerHTML = `${pixels} pixels scrolled`
 
@@ -42,9 +37,8 @@ document.addEventListener("scroll", function () {
   // because it's in the same box
   const pixels = window.pageYOffset
 
-   // gives you the height of 3200 
-  const pageHeight = bodyTag.getBoundingClientRect().height 
-
+  // gives you the height of 3200 
+  const pageHeight = bodyTag.getBoundingClientRect().height
 
   // find the total scrollable distance which is
   // page height - window height
@@ -63,7 +57,6 @@ document.addEventListener("scroll", function () {
   progressTag.style.width = `${100 * percentage}%`
 
 })
-
 
 // document.querySelector("body").getBoundingClientRect()
 // gives you the size of the page not window
@@ -94,6 +87,47 @@ document.addEventListener("scroll", function () {
       // clientTag.innerHTML = "test1234" "test1234" is a string that doesn't update, hence won't work
       clientTag.innerHTML = section.getAttribute("data-client")
       pageTag.innerHTML = section.getAttribute("data-page")
+
+      // target s3 heading
+      if (section.hasAttribute("data-is-dark")) {
+        // if it is the dark section, we want to add a class of white
+        headerTag.classList.add("white")
+        progressTag.classList.add("white")
+      } else {
+
+        // removes the header white if the data-is-dark="yes" attribute isn't there
+        // in the HTML
+        headerTag.classList.remove("white")
+        progressTag.classList.remove("white")
+
+      }
     }
   })
+})
+
+
+// when we scroll the page, make things parallax
+// we want to move certain tags, based on how far they are from an anchor point
+// what is the anchor? the anchor point is the middle of the section
+// how far should we parallax? it's a ratio of the distance scrolled to the middle point of the anchor
+document.addEventListener("scroll", function () {
+  const topViewport = window.pageYOffset
+
+  const midViewport = topViewport + (window.innerHeight / 2)
+
+  // console.log(midViewport)
+
+  sections.forEach(section => {
+    const topSection = section.offsetTop
+
+    const midSection = topSection + (section.offsetHeight / 2)
+
+    // console.log(midSection) check it's working
+
+    const distanceToSection = midViewport - midSection
+
+    console.log(distanceToSection)
+
+  })
+
 })

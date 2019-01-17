@@ -16,6 +16,12 @@ header {
   top: 36px;
   left: 36px;
   z-index: 1;
+  transition: color 0.5s; 
+}
+
+/* this is what we target in the JS */
+header.white {
+  color: #fff;
 }
 
 
@@ -116,7 +122,15 @@ div.progress {
   background-color: #333; 
   /* all elements by default have a z-index of 0  */
   z-index: 1; 
+  transition: background-color 0.5s; 
 }
+
+/* this is what we target in the JS for the progress bar */
+div.progress.white {
+  background-color: #fff; 
+}
+
+
 
 
 
